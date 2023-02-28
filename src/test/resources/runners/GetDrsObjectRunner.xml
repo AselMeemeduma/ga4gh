@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Get Drs Object Runner">
+
+
+    <test name="Get Drs Object Runner" parallel="classes" thread-count="10">
+        <classes>
+            <class name="com.java.org.ga4ghtestcasesforstarterkitdrs.testcases.DrsGetObjectsJson"/>
+        </classes>
+    </test>
+</suite>
