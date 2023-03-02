@@ -4,6 +4,7 @@ import com.java.org.ga4ghtestcasesforstarterkitdrs.models.ErrorResponse;
 import com.java.org.ga4ghtestcasesforstarterkitdrs.models.ResponseModel;
 import com.java.org.ga4ghtestcasesforstarterkitdrs.utils.PropertyFileReader;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -94,26 +95,27 @@ public class TestDrsGetObjectsJson {
     }
 
     @Test(testName = "DRS_GET_OBJECT_V1_API_J_06",
-            description = "Verify unsuccessful GET request with incorrect Object ID", priority = 1,
-            expectedExceptions = RuntimeException.class)
+            description = "Verify unsuccessful GET request with incorrect Object ID", priority = 1)
     public void getDrsObjectsWithIncorrectObjectID(){
         String objectId = "xx18bfb64168994489bc9e7fda0acd4f";
         String drsObjectsGetUrl = properties.getProperty("ga4gh.starter.drs.get").concat("/".concat(objectId));
         URI getDrsObjectURI = URI.create(drsObjectsGetUrl);
-        ResponseEntity<ErrorResponse> response = restTemplate.getForEntity(getDrsObjectURI, ErrorResponse.class);
-        Assert.assertEquals(response.getStatusCode().value(), 404);
+
+        Assert.assertThrows(HttpClientErrorException.NotFound.class, () ->{
+            restTemplate.getForEntity(getDrsObjectURI, ErrorResponse.class);
+        });
 
     }
 
     @Test(testName = "DRS_GET_OBJECT_V1_API_J_07",
-            description = "Verify unsuccessful GET request without Object ID", priority = 1,
-            expectedExceptions = RuntimeException.class)
+            description = "Verify unsuccessful GET request without Object ID", priority = 1)
     public void getDrsObjectsWithoutObjectID(){
         String drsObjectsGetUrl = properties.getProperty("ga4gh.starter.drs.get");
         URI getDrsObjectURI = URI.create(drsObjectsGetUrl);
-        ResponseEntity<ResponseModel> response = restTemplate.getForEntity(getDrsObjectURI, ResponseModel.class);
 
-        Assert.assertEquals(response.getStatusCode().value(), 405);
+        Assert.assertThrows(HttpClientErrorException.MethodNotAllowed.class, () ->{
+            restTemplate.getForEntity(getDrsObjectURI, ResponseModel.class);
+        });
     }
 
 }
