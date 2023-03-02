@@ -33,7 +33,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ```
 git clone https://github.com/AselMeemeduma/ga4gh-test-cases-for-starter-kit-drs.git
-cd ga4gh-test-cases-for-starter-kit-drs
 ```
 
 2. Navigate to the project root directory:
