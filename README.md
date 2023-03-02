@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](https://opensource.org/licenses/Apache-2.0)
 [![Java 17+](https://img.shields.io/badge/java-17+-blue.svg?style=flat-square)](https://www.java.com)
 [![Gradle 7.3.2+](https://img.shields.io/badge/gradle-7.3.2+-blue.svg?style=flat-square)](https://gradle.org/)
+[![Testng 6.14.3+](https://img.shields.io/badge/Testng-6.14.3+-blue.svg?style=flat-square)](https://testng.org/doc/)
 
 ## GA4GH Starter Kit DRS Test Automation Tool with TestNG, Gradle, and Java 17
 
@@ -23,7 +24,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 * JDK 17 or above
 * Gradle 7.x or above
-* TestNG 7.x or above
+* TestNG 6.x or above
+* Setup [GA4GH Starter Kit DRS](https://github.com/ga4gh/ga4gh-starter-kit-drs) 
 
 ### Installing
 
