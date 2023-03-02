@@ -79,5 +79,5 @@ See also the list of [contributors](https://github.com/AselMeemeduma/ga4gh-test-
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/AselMeemeduma/ga4gh-test-cases-for-starter-kit-drs/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/AselMeemeduma/ga4gh-test-cases-for-starter-kit-drs/blob/develop/LICENSE) file for details
 
